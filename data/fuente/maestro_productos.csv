@@ -1,0 +1,10 @@
+id_producto,nombre,familia,tarifa_comision
+PR-CON,Crédito de consumo,Créditos,0.020
+PR-HIP,Crédito hipotecario,Créditos,0.008
+PR-AUT,Crédito automotriz,Créditos,0.015
+PR-TDC,Tarjeta de crédito (cupo),Medios de pago,0.010
+PR-DAP,Depósito a plazo,Inversiones,0.004
+PR-FMU,Fondo mutuo,Inversiones,0.006
+PR-SDG,Seguro de desgravamen,Seguros,0.120
+PR-SVI,Seguro de vida,Seguros,0.150
+PR-LEA,Leasing pyme,Créditos,

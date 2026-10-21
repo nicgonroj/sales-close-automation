@@ -1,0 +1,64 @@
+{
+  "version": "2026.09",
+  "descripcion": "Reglas de negocio que debe cumplir cada operación antes de entrar al cierre. Cada regla se evalúa por separado; una fila se rechaza si incumple al menos una y se registran todos los motivos.",
+  "reglas": [
+    {
+      "id": "R01_campos_obligatorios",
+      "tipo": "obligatorio",
+      "campos": ["id_operacion", "fecha_operacion", "id_ejecutivo", "id_sucursal", "id_producto", "id_segmento", "monto_clp", "canal"],
+      "descripcion": "La operación trae todos los campos que necesita el cierre."
+    },
+    {
+      "id": "R02_operacion_unica",
+      "tipo": "unico",
+      "campo": "id_operacion",
+      "descripcion": "Una operación se informa una sola vez; las repeticiones de la extracción se rechazan y se conserva la primera."
+    },
+    {
+      "id": "R03_monto_positivo",
+      "tipo": "monto_positivo",
+      "campo": "monto_clp",
+      "descripcion": "El monto es un entero en CLP mayor que cero. Las reversas no se informan como montos negativos."
+    },
+    {
+      "id": "R04_fecha_en_periodo",
+      "tipo": "fecha_en_periodo",
+      "campo": "fecha_operacion",
+      "descripcion": "La fecha es válida (AAAA-MM-DD) y pertenece al período que se cierra."
+    },
+    {
+      "id": "R05_ejecutivo_existe",
+      "tipo": "existe_en_maestro",
+      "campo": "id_ejecutivo",
+      "maestro": "ejecutivos",
+      "descripcion": "El ejecutivo existe en el maestro de dotación comercial."
+    },
+    {
+      "id": "R06_sucursal_existe",
+      "tipo": "existe_en_maestro",
+      "campo": "id_sucursal",
+      "maestro": "sucursales",
+      "descripcion": "La sucursal existe en el maestro de sucursales."
+    },
+    {
+      "id": "R07_segmento_existe",
+      "tipo": "existe_en_maestro",
+      "campo": "id_segmento",
+      "maestro": "segmentos",
+      "descripcion": "El segmento de cliente existe en el maestro de segmentos."
+    },
+    {
+      "id": "R08_producto_con_tarifa",
+      "tipo": "producto_con_tarifa",
+      "campo": "id_producto",
+      "descripcion": "El producto existe y tiene tarifa de comisión vigente; sin tarifa no se puede calcular la comisión del cierre."
+    },
+    {
+      "id": "R09_canal_valido",
+      "tipo": "dominio",
+      "campo": "canal",
+      "valores": ["Sucursal", "Digital", "Telefónico"],
+      "descripcion": "El canal pertenece al dominio acordado con el área comercial."
+    }
+  ]
+}

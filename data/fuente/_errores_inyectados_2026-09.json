@@ -1,0 +1,15 @@
+{
+  "periodo": "2026-09",
+  "seed": 42,
+  "filas_originales": 5997,
+  "filas_en_archivo": 6087,
+  "errores_inyectados": {
+    "duplicado": 90,
+    "monto_negativo": 48,
+    "fecha_fuera_periodo": 36,
+    "ejecutivo_inexistente": 30,
+    "producto_sin_tarifa": 36,
+    "segmento_vacio": 18
+  },
+  "filas_validas_esperadas": 5829
+}

@@ -1,0 +1,5 @@
+id_segmento,nombre,lista_distribucion
+SEG-PER,Personas,cierre-personas@empresa.example
+SEG-PRE,Preferente,cierre-preferente@empresa.example
+SEG-PYM,Pyme,cierre-pyme@empresa.example
+SEG-EMP,Empresas,cierre-empresas@empresa.example

@@ -1,0 +1,15 @@
+[project]
+name = "sales-close-automation"
+version = "0.1.0"
+description = "Automatización del cierre comercial mensual: validación con reglas de negocio, modelo dimensional y reportes por segmento"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Nicolás González Rojas" }]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+cierre = "cierre.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
